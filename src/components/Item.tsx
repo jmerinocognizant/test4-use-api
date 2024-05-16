@@ -13,11 +13,11 @@ export const Item = ({item,action}:ItemProps) => {
 
   return (
     <>
-        <tr key={item.id}>
-            <td>{item.title}</td>
-            <td>{item.episode}</td>
-            <td>{item.description}</td>
-            <td className="centrar-contenido-columna"><Actions id={item.id} action={action}/></td>
+        <tr key={id}>
+            <td>{title}</td>
+            <td>{episode}</td>
+            <td>{description}</td>
+            <td className="centrar-contenido-columna"><Actions id={id} action={action}/></td>
         </tr>
     </>
   )

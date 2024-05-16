@@ -11,7 +11,7 @@ export enum ActionTypes{
 
 export const Table = () => {
 
-    const { isLoading, listado } = useAppSelector((state: RootState) => state.pelicula)
+    const { listado } = useAppSelector((state: RootState) => state.pelicula)
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -62,31 +62,21 @@ export const Table = () => {
 
   return (
     <> 
-            <h2 className="title-carga">
-                {
-                    isLoading && <span>cargando...</span>
+        <table className="table-custom">
+            <thead>
+                <tr>
+                    <th scope="col" className="table-col">Title</th>
+                    <th scope="col" className="table-col">Episode number</th>
+                    <th scope="col" className="table-col">Description</th>
+                    <th scope="col" className="table-col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                { 
+                    listado.map(item => <Item key={item.id} item={item} action={action}/>)
                 }
-            </h2>
-             
-
-            <table className="table-custom">
-                <thead>
-                    <tr>
-                        <th scope="col" className="table-col">Title</th>
-                        <th scope="col" className="table-col">Episode number</th>
-                        <th scope="col" className="table-col">Description</th>
-                        <th scope="col" className="table-col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { 
-                        listado.map(item => <Item key={item.id} item={item} action={action}/>)
-                    }
-                </tbody>
-            </table>
-        
-          
-        
+            </tbody>
+        </table>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import './App.css';
-import { PruebasApi } from './components/PruebasApi';
+import { Loading } from './components/Loading';
 import { Table } from './components/Table';
 
 function App() {
@@ -7,11 +7,10 @@ function App() {
   return (
     <div className="App">
       
-        
         <h1>Test4: use fetch api</h1>
         <hr/>
 
-        {/* <PruebasApi /> */}
+        <Loading />
 
         <Table />
 

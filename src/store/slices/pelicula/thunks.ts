@@ -1,5 +1,5 @@
 import { resetListadoPeliculas, getListadoPeliculas, deletePelicula, updatePelicula, PeliculaType } from '../../../api/peliculasApi';
-import { startLoading, setPeliculas, peliculaSlice} from './peliculaSlice';
+import { startLoading, setPeliculas } from './peliculaSlice';
 import { AppDispatch } from '../../store';
 
 
@@ -52,5 +52,6 @@ export const borrarPelicula = (peliculaId:number) => {
         dispatch( setPeliculas( listadoPeliculas ));
     }
 }
+
 
 
